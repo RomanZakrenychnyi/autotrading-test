@@ -19,7 +19,7 @@
             <a href="/" class="header__logo">
               <picture>
                 <source type="image/webp" srcset="img/logo.webp 1x, img/logo@2x.webp 2x" />
-                <img src="img/logo.png" alt="Shinobi Logo" />
+                <img src="img/logo.png" alt="shinobi logo" />
               </picture>
             </a>
 
@@ -33,9 +33,9 @@
             </nav>
 
             <div class="header__actions">
-              <a href="#" class="header__login btn-outline">Личный кабинет</a>
+              <a href="#" class="header__login">Личный кабинет</a>
               <button class="header__burger burger" aria-label="Открыть меню">
-                <img src="img/burger.svg" alt="Menu" />
+                <img src="img/burger.svg" alt="menu" />
               </button>
             </div>
           </div>
@@ -56,8 +56,8 @@
             <a href="#registration" class="hero__btn">РЕГИСТРАЦИЯ</a>
           </div>
 
-          <a href="#" id="arrow-down" class="hero__scroll">
-            <img src="img/arrow-down.svg" alt="Scroll Down" />
+          <a href="#workflow" id="arrow-down" class="hero__scroll">
+            <img src="img/arrow-down.svg" alt="scroll down" />
           </a>
         </div>
       </section>
@@ -93,10 +93,65 @@
             </div>
           </div>
 
-          <a href="#registration" class="hero__btn">РЕГИСТРАЦИЯ</a>
+          <a href="#registration" class="workflow__btn">РЕГИСТРАЦИЯ</a>
 
-          <a href="#next-section" class="hero__scroll">
-            <img src="img/arrow-down.svg" alt="Scroll Down" />
+          <a href="#features" class="hero__scroll">
+            <img src="img/arrow-down.svg" alt="scroll down" />
+          </a>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="container features__container">
+          <div class="features__visual">
+            <div class="features__character-wrapper">
+              <picture class="features__character">
+                <source type="image/webp" srcset="img/shinobi-char@1x.webp 1x, img/shinobi-char@2x.webp 2x" />
+                <img src="img/shinobi-char@1x.webp" alt="Shinobi Warrior" loading="lazy" />
+              </picture>
+
+              <div class="features__partner">
+                <img src="img/partner-badge.webp" alt="Официальный партнёр Binance" />
+              </div>
+            </div>
+          </div>
+
+          <div class="features__content">
+            <h2 class="features__title">SHINOBI</h2>
+
+            <ul class="features__list">
+              <li class="features__item">
+                <div class="features__icon">
+                  <img src="img/arrow-right.svg" alt="arrow" />
+                </div>
+                <p class="features__text">Торговая стратегия, <span>которая работает 24/7 и 365 дней в году.</span></p>
+              </li>
+
+              <li class="features__item">
+                <div class="features__icon">
+                  <img src="img/arrow-right.svg" alt="arrow" />
+                </div>
+                <p class="features__text">Создано крипто-комьюнити из <span>147 трейдеров.</span> В основе стратегии — технический анализ, подкрепленный искусственным интеллектом.</p>
+              </li>
+
+              <li class="features__item">
+                <div class="features__icon">
+                  <img src="img/arrow-right.svg" alt="arrow" />
+                </div>
+                <p class="features__text"><span>Главное — безопасность и скорость.</span> Поэтому подключение через API без доступа к вводу/выводу ваших средств.</p>
+              </li>
+
+              <li class="features__item">
+                <div class="features__icon">
+                  <img src="img/arrow-right.svg" alt="arrow" />
+                </div>
+                <p class="features__text">Подключение к Binance через собственные серверы.</p>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#next" class="hero__scroll">
+            <img src="img/arrow-down.svg" alt="scroll down" />
           </a>
         </div>
       </section>

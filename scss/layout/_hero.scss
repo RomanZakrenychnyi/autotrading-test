@@ -89,23 +89,7 @@
   }
 
   &__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $text-accent;
-    @include fluid-prop('width', 243px, 367px);
-    @include fluid-prop('height', 64px, 97px);
-    @include fluid-prop('font-size', 16.5px, 25px);
-    font-weight: 700;
-    color: $text-black;
-    border-radius: 30px;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-
-    &:hover,
-    &:focus {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba($text-accent, 0.3);
-    }
+    @include btn;
   }
 
   &__scroll {

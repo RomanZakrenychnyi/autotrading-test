@@ -310,17 +310,24 @@ section {
   align-items: center;
   justify-content: center;
   background-color: #EAFC52;
+  color: #000000;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
   width: clamp(243px, 243px + (var(--content-vw, 100vw) - 420px) * 0.0826666667, 367px);
   height: clamp(64px, 64px + (var(--content-vw, 100vw) - 420px) * 0.022, 97px);
   font-size: clamp(16.5px, 16.5px + (var(--content-vw, 100vw) - 420px) * 0.0056666667, 25px);
-  font-weight: 700;
-  color: #000000;
-  border-radius: 30px;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .hero__btn:hover, .hero__btn:focus {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(234, 252, 82, 0.3);
+}
+.hero__btn:active {
+  transform: translateY(0);
 }
 .hero__scroll {
   position: absolute;
@@ -370,8 +377,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  margin-bottom: clamp(40px, 40px + (var(--content-vw, 100vw) - 420px) * 0.0266666667, 80px);
+  -moz-column-gap: 37px;
+       column-gap: 37px;
+  margin-bottom: clamp(46px, 46px + (var(--content-vw, 100vw) - 420px) * 0.0146666667, 68px);
 }
 @media screen and (max-width: 1200px) {
   .workflow__header {
@@ -383,18 +391,20 @@ section {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
   line-height: 1;
-  font-size: clamp(40px, 40px + (var(--content-vw, 100vw) - 420px) * 0.02, 70px);
+  font-size: clamp(35px, 35px + (var(--content-vw, 100vw) - 420px) * 0.0266666667, 75px);
   color: #FFFFFF;
 }
 .workflow__badge {
   background: #ffffff;
-  border-radius: 100px;
+  border-radius: 20px;
   padding: 12px 30px;
+  padding-inline: clamp(16px, 16px + (var(--content-vw, 100vw) - 420px) * 0.0053333333, 24px);
+  padding-block: clamp(7px, 7px + (var(--content-vw, 100vw) - 420px) * 0.002, 10px);
 }
 .workflow__badge span {
-  color: #000;
+  color: #000000;
   font-weight: 700;
-  font-size: clamp(14px, 14px + (var(--content-vw, 100vw) - 420px) * 0.004, 20px);
+  font-size: clamp(14px, 14px + (var(--content-vw, 100vw) - 420px) * 0.0106666667, 30px);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -409,7 +419,7 @@ section {
   .workflow__grid {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
   }
 }
 .workflow__item {
@@ -418,35 +428,198 @@ section {
   align-items: center;
 }
 .workflow__label {
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: clamp(24px, 24px + (var(--content-vw, 100vw) - 420px) * 0.008, 36px);
+  font-weight: 500;
+  font-size: clamp(20px, 20px + (var(--content-vw, 100vw) - 420px) * 0.0133333333, 40px);
   color: #FFFFFF;
-  margin-bottom: 10px;
+  margin-bottom: clamp(7px, 7px + (var(--content-vw, 100vw) - 420px) * 0.0146666667, 29px);
 }
 .workflow__icon {
-  margin-bottom: 15px;
+  margin-bottom: clamp(9px, 9px + (var(--content-vw, 100vw) - 420px) * 0.0253333333, 47px);
 }
 .workflow__icon img {
-  width: clamp(20px, 20px + (var(--content-vw, 100vw) - 420px) * 0.0066666667, 30px);
+  width: clamp(22px, 22px + (var(--content-vw, 100vw) - 420px) * 0.026, 61px);
 }
 .workflow__card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  border-radius: 24px;
+  background: linear-gradient(180deg, rgb(27, 27, 27) 0%, rgba(27, 27, 27, 0) 100%);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(280px, 280px + (var(--content-vw, 100vw) - 420px) * 0.1066666667, 440px);
-  height: clamp(60px, 60px + (var(--content-vw, 100vw) - 420px) * 0.02, 90px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  padding-inline: clamp(18px, 18px + (var(--content-vw, 100vw) - 420px) * 0.0093333333, 32px);
+  padding-block: clamp(7px, 7px + (var(--content-vw, 100vw) - 420px) * 0.002, 10px);
+  box-shadow: 0 4px 15px 0 black;
 }
 .workflow__card span {
   font-weight: 700;
-  font-size: clamp(18px, 18px + (var(--content-vw, 100vw) - 420px) * 0.0066666667, 28px);
+  font-size: clamp(18px, 18px + (var(--content-vw, 100vw) - 420px) * 0.0146666667, 40px);
   text-transform: uppercase;
+  color: #FFFFFF;
+}
+.workflow__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EAFC52;
+  color: #000000;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  width: clamp(243px, 243px + (var(--content-vw, 100vw) - 420px) * 0.0826666667, 367px);
+  height: clamp(64px, 64px + (var(--content-vw, 100vw) - 420px) * 0.022, 97px);
+  font-size: clamp(16.5px, 16.5px + (var(--content-vw, 100vw) - 420px) * 0.0056666667, 25px);
+}
+.workflow__btn:hover, .workflow__btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(234, 252, 82, 0.3);
+}
+.workflow__btn:active {
+  transform: translateY(0);
+}
+@media screen and (max-width: 1200px) {
+  .workflow__btn {
+    display: none;
+  }
+}
+
+.features {
+  --char-width: clamp(300px, 300px + (var(--content-vw, 100vw) - 420px) * 0.4, 900px);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #0C0B0E;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 1200px) {
+  .features {
+    height: auto;
+    padding-block: 60px;
+  }
+}
+.features__container {
+  max-width: 1600px;
+  display: grid;
+  grid-template-columns: var(--char-width) 1fr;
+  align-items: center;
+  gap: 40px;
+}
+@media screen and (max-width: 1200px) {
+  .features__container {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
+}
+.features__visual {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 1200px) {
+  .features__visual {
+    order: -1;
+  }
+}
+.features__character-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.features__character {
+  display: block;
+}
+.features__character img {
+  position: relative;
+  display: block;
+  width: clamp(300px, 300px + (var(--content-vw, 100vw) - 420px) * 0.4093333333, 914px);
+  height: auto;
+  z-index: 100;
+}
+@media screen and (max-width: 1200px) {
+  .features__character img {
+    max-width: 100%;
+    max-width: 500px;
+  }
+}
+.features__partner {
+  position: absolute;
+  top: 6%;
+  right: -2%;
+  width: clamp(161px, 161px + (var(--content-vw, 100vw) - 420px) * 0.1086666667, 324px);
+}
+@media screen and (max-width: 1200px) {
+  .features__partner {
+    top: -10px;
+    right: -35px;
+  }
+}
+.features__partner p {
+  font-size: 10px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.features__partner img {
+  width: 80%;
+}
+.features__title {
+  padding-right: 80px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(35px, 35px + (var(--content-vw, 100vw) - 420px) * 0.0366666667, 90px);
+  margin-bottom: clamp(21px, 21px + (var(--content-vw, 100vw) - 420px) * 0.008, 33px);
+  text-align: right;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1200px) {
+  .features__title {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 55px;
+  }
+}
+.features__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.features__item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: clamp(11px, 11px + (var(--content-vw, 100vw) - 420px) * 0.0166666667, 36px);
+}
+@media screen and (max-width: 1200px) {
+  .features__item {
+    flex-direction: row;
+  }
+}
+.features__icon {
+  flex-shrink: 0;
+  margin-top: clamp(5px, 5px + (var(--content-vw, 100vw) - 420px) * 0.0033333333, 10px);
+}
+.features__icon img {
+  width: clamp(38px, 38px + (var(--content-vw, 100vw) - 420px) * 0.006, 47px);
+}
+@media screen and (max-width: 1200px) {
+  .features__icon img {
+    transform: rotate(180deg);
+  }
+}
+.features__text {
+  font-size: clamp(14px, 14px + (var(--content-vw, 100vw) - 420px) * 0.004, 20px);
+  font-weight: 500;
+  color: #C3C3C3;
+  text-align: right;
+}
+@media screen and (max-width: 1200px) {
+  .features__text {
+    text-align: left;
+  }
+}
+.features__text span {
   color: #FFFFFF;
 }
 

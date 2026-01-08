@@ -1,16 +1,43 @@
-@use "sass:math";
+@use 'sass:math';
+@use '../abstracts/variables' as *;
+
 
 @mixin fluid-prop($prop, $min, $max, $minW: 420px, $maxW: 1920px) {
   $slope: math.div($max - $min, $maxW - $minW);
-  #{$prop}: clamp(
-    #{$min},
-    calc(#{$min} + (var(--content-vw, 100vw) - #{$minW}) * #{$slope}),
-    #{$max}
-  );
+  #{$prop}: clamp(#{$min}, calc(#{$min} + (var(--content-vw, 100vw) - #{$minW}) * #{$slope}), #{$max});
 }
 
 @mixin mq($width) {
   @media screen and (max-width: #{$width}) {
     @content;
+  }
+}
+
+@mixin btn($bg-color: $text-accent, $color: $text-black, $radius: 50px) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-color;
+  color: $color;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: $radius;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+
+  @include fluid-prop('width', 243px, 367px);
+  @include fluid-prop('height', 64px, 97px);
+  @include fluid-prop('font-size', 16.5px, 25px);
+
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba($bg-color, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }

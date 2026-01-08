@@ -1,0 +1,148 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.features {
+  @include fluid-prop('--char-width', 300px, 900px);
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: $bg-main;
+  position: relative;
+  overflow: hidden;
+
+  @include mq(1200px) {
+    height: auto;
+    padding-block: 60px;
+  }
+
+  &__container {
+    max-width: 1600px;
+    display: grid;
+    // Меняем 1fr 1fr на пропорцию, где левая часть может быть больше
+    grid-template-columns: var(--char-width) 1fr;
+    align-items: center;
+    gap: 40px;
+
+    @include mq(1200px) {
+      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      gap: 45px;
+    }
+  }
+
+  &__visual {
+    display: flex;
+    justify-content: center;
+
+    @include mq(1200px) {
+      order: -1;
+    }
+  }
+
+  &__character-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__character {
+    display: block;
+
+    img {
+      position: relative;
+      display: block;
+      @include fluid-prop('width', 300px, 914px); // Задай нужный диапазон ширины
+      height: auto;
+      z-index: 100;
+
+      @include mq(1200px) {
+        max-width: 100%;
+        max-width: 500px;
+      }
+    }
+  }
+
+  &__partner {
+    position: absolute;
+    top: 6%;
+    right: -2%;
+    @include fluid-prop('width', 161px, 324px);
+
+    @include mq(1200px) {
+      top: -10px;
+      right: -35px;
+    }
+
+    p {
+      font-size: 10px;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    img {
+      width: 80%;
+    }
+  }
+
+  &__title {
+    padding-right: 80px;
+    font-family: $font-accent;
+    @include fluid-prop('font-size', 35px, 90px);
+    @include fluid-prop('margin-bottom', 21px, 33px);
+    text-align: right;
+    text-transform: uppercase;
+
+    @include mq(1200px) {
+      text-align: left;
+      padding-right: 0;
+      padding-left: 55px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    @include fluid-prop('gap', 11px, 36px);
+
+    @include mq(1200px) {
+      flex-direction: row;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    @include fluid-prop('margin-top', 5px, 10px);
+
+    img {
+      @include fluid-prop('width', 38px, 47px);
+
+      @include mq(1200px) {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__text {
+    @include fluid-prop('font-size', 14px, 20px);
+    font-weight: 500;
+    color: $text-address;
+    text-align: right;
+
+    @include mq(1200px) {
+      text-align: left;
+    }
+
+    span {
+      color: $text-main;
+    }
+  }
+}

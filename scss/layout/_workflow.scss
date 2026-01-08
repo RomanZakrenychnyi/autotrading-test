@@ -25,8 +25,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    @include fluid-prop('margin-bottom', 40px, 80px);
+    column-gap: 37px;
+    @include fluid-prop('margin-bottom', 46px, 68px);
 
     @include mq(1200px) {
       flex-direction: column;
@@ -38,19 +38,21 @@
     font-family: $font-accent;
     font-weight: 700;
     line-height: 1;
-    @include fluid-prop('font-size', 40px, 70px);
+    @include fluid-prop('font-size', 35px, 75px);
     color: $text-main;
   }
 
   &__badge {
-    background: #ffffff; // Чисто белый как на скрине
-    border-radius: 100px;
+    background: $bg-white;
+    border-radius: 20px;
     padding: 12px 30px;
+    @include fluid-prop('padding-inline', 16px, 24px);
+    @include fluid-prop('padding-block', 7px, 10px);
 
     span {
-      color: #000;
+      color: $text-black;
       font-weight: 700;
-      @include fluid-prop('font-size', 14px, 20px);
+      @include fluid-prop('font-size', 14px, 30px);
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -66,7 +68,7 @@
     @include mq(1200px) {
       flex-direction: column;
       align-items: center;
-      gap: 40px;
+      gap: 50px;
     }
   }
 
@@ -77,37 +79,43 @@
   }
 
   &__label {
-    font-family: $font-main;
-    font-weight: 400;
-    @include fluid-prop('font-size', 24px, 36px);
+    font-weight: 500;
+    @include fluid-prop('font-size', 20px, 40px);
     color: $text-main;
-    margin-bottom: 10px;
+    @include fluid-prop('margin-bottom', 7px, 29px);
   }
 
   &__icon {
-    margin-bottom: 15px;
+    @include fluid-prop('margin-bottom', 9px, 47px);
+
     img {
-      @include fluid-prop('width', 20px, 30px);
+      @include fluid-prop('width', 22px, 61px);
     }
   }
 
   &__card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(27, 27, 27, 1) 0%, rgba(27, 27, 27, 0) 100%);
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    @include fluid-prop('width', 280px, 440px);
-    @include fluid-prop('height', 60px, 90px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    @include fluid-prop('padding-inline', 18px, 32px);
+    @include fluid-prop('padding-block', 7px, 10px);
+    box-shadow: 0 4px 15px 0 rgba($text-black, 1);
 
     span {
       font-weight: 700;
-      @include fluid-prop('font-size', 18px, 28px);
+      @include fluid-prop('font-size', 18px, 40px);
       text-transform: uppercase;
       color: $text-main;
+    }
+  }
+
+  &__btn {
+    @include btn;
+
+    @include mq(1200px) {
+      display: none;
     }
   }
 }
