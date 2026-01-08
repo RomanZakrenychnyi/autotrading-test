@@ -1,11 +1,33 @@
 // scss/base/_base.scss
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  @include mq(1200px) {
+    scroll-snap-type: none;
+  }
+}
 
 body {
   background-color: $bg-main;
-  color: $text-main; 
+  color: $text-main;
   font-family: $font-main;
   min-height: 100vh;
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+
+  @include mq(1200px) {
+    height: auto;
+    min-height: 100vh;
+    scroll-snap-align: none;
+  }
 }

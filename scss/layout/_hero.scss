@@ -1,0 +1,136 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-main;
+  overflow: hidden;
+  position: relative;
+
+  @include mq(1200px) {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .header {
+    flex-shrink: 0;
+    @include fluid-prop('padding-top', 14px, 18px);
+  }
+
+  &__container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+
+    @include mq(1200px) {
+      margin-top: 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 1030px;
+    font-family: $font-accent;
+    font-weight: 700;
+    color: $text-main;
+    line-height: 1.2;
+    text-transform: uppercase;
+    @include fluid-prop('font-size', 30px, 60px);
+    @include fluid-prop('margin-bottom', 10px, 29px);
+
+    span {
+      &.hero__title--accent {
+        @include fluid-prop('font-size', 40px, 80px);
+        color: $text-accent;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-main;
+    font-weight: 500;
+    color: $text-main;
+    @include fluid-prop('font-size', 15px, 30px);
+    @include fluid-prop('margin-bottom', 26px, 29px);
+  }
+
+  &__badge {
+    background: $bg-text;
+    border: 1px solid $bg-text;
+    border-radius: 20px;
+    @include fluid-prop('padding-block', 12px, 13px);
+    @include fluid-prop('padding-left', 12px, 25px);
+    @include fluid-prop('padding-right', 16px, 25px);
+    @include fluid-prop('margin-bottom', 37px, 42px);
+
+    span {
+      color: $text-accent;
+      font-family: $font-main;
+      @include fluid-prop('font-size', 13px, 25px);
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $text-accent;
+    @include fluid-prop('width', 243px, 367px);
+    @include fluid-prop('height', 64px, 97px);
+    @include fluid-prop('font-size', 16.5px, 25px);
+    font-weight: 700;
+    color: $text-black;
+    border-radius: 30px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba($text-accent, 0.3);
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 77px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    z-index: 5;
+
+    &:hover,
+    &:focus {
+      transform: translateX(-50%) scale(1.2);
+    }
+
+    img {
+      @include fluid-prop('width', 28px, 37px);
+      height: auto;
+    }
+
+    @include mq(1200px) {
+      display: none;
+    }
+  }
+}

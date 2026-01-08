@@ -1,0 +1,113 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.workflow {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-main;
+
+  @include mq(1200px) {
+    height: auto;
+    padding-block: 60px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    @include fluid-prop('margin-bottom', 40px, 80px);
+
+    @include mq(1200px) {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  &__logo {
+    font-family: $font-accent;
+    font-weight: 700;
+    line-height: 1;
+    @include fluid-prop('font-size', 40px, 70px);
+    color: $text-main;
+  }
+
+  &__badge {
+    background: #ffffff; // Чисто белый как на скрине
+    border-radius: 100px;
+    padding: 12px 30px;
+
+    span {
+      color: #000;
+      font-weight: 700;
+      @include fluid-prop('font-size', 14px, 20px);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    @include fluid-prop('gap', 40px, 120px);
+    @include fluid-prop('margin-bottom', 40px, 60px);
+
+    @include mq(1200px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__label {
+    font-family: $font-main;
+    font-weight: 400;
+    @include fluid-prop('font-size', 24px, 36px);
+    color: $text-main;
+    margin-bottom: 10px;
+  }
+
+  &__icon {
+    margin-bottom: 15px;
+    img {
+      @include fluid-prop('width', 20px, 30px);
+    }
+  }
+
+  &__card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include fluid-prop('width', 280px, 440px);
+    @include fluid-prop('height', 60px, 90px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+    span {
+      font-weight: 700;
+      @include fluid-prop('font-size', 18px, 28px);
+      text-transform: uppercase;
+      color: $text-main;
+    }
+  }
+}
