@@ -3,15 +3,13 @@
 
 .container {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  
-  @include fluid-prop("padding-left", 20px, 36px, 360px, 420px);
-  @include fluid-prop("padding-right", 20px, 36px, 360px, 420px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
 
   @include mq(1200px) {
-    max-width: 1200px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 36.5px;
+    padding-right: 36.5px;
   }
 }

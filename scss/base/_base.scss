@@ -1,10 +1,11 @@
+// scss/base/_base.scss
 @use '../abstracts/variables' as *;
 
 body {
-  background-color: $bg-color;
-  min-height: 100vh;
-  color: $text-color;
+  background-color: $bg-main;
+  color: $text-main; 
   font-family: $font-main;
+  min-height: 100vh;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
