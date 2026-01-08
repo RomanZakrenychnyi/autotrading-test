@@ -25,7 +25,13 @@
     <header class="header">
       <div class="container header__container">
         <a href="/" class="header__logo">
-          <img src="img/logo.svg" alt="Shinobi" />
+          <picture>
+            <source type="image/webp" srcset="img/logo.webp 1x, img/logo@2x.webp 2x" />
+
+            <source type="image/png" srcset="img/logo.png 1x, img/logo@2x.png 2x" />
+
+            <img src="img/logo.png" alt="Shinobi Logo" width="92" height="92" loading="eager" />
+          </picture>
         </a>
 
         <nav class="header__nav nav">

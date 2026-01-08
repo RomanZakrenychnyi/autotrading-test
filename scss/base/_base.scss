@@ -1,11 +1,10 @@
 @use '../abstracts/variables' as *;
 
 body {
+  background-color: $bg-color;
+  min-height: 100vh;
+  color: $text-color;
   font-family: $font-main;
-  font-weight: 400; // По умолчанию regular
-  -webkit-font-smoothing: antialiased; // Сглаживание для Mac
-}
-
-h1, h2, h3, h4, .font-accent {
-  font-family: $font-accent;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }

@@ -2,11 +2,19 @@
 $font-main: 'Raleway', sans-serif;
 $font-accent: 'Orbitron', sans-serif;
 
-// Colors
-$primary-color: #333;
-$accent-color: #007bff;
-$text-color: #1a1a1a;
-$bg-color: #0C0B0E;
+// Backgrounds
+$bg-main: #0C0B0E; 
+
+// Text Colors
+$text-main: #FFFFFF;
+$text-accent: #EAFC52;
+$text-italic: #B20000;
+$text-black: #000000;
+$text-address: #C3C3C3;
+$text-muted: #888888;
+
+// Disclaimer Colors
+$color-disclaimer: #B20000;
 
 // Spacing
 $section-padding-mobile: 40px;
