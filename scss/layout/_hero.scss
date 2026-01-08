@@ -91,30 +91,4 @@
   &__btn {
     @include btn;
   }
-
-  &__scroll {
-    position: absolute;
-    bottom: 77px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    z-index: 5;
-
-    &:hover,
-    &:focus {
-      transform: translateX(-50%) scale(1.2);
-    }
-
-    img {
-      @include fluid-prop('width', 28px, 37px);
-      height: auto;
-    }
-
-    @include mq(1200px) {
-      display: none;
-    }
-  }
 }

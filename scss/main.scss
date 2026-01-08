@@ -8,8 +8,7 @@
 @use 'base/base';
 
 // 3. Components
-@use 'components/button';
-@use 'components/title';
+@use 'components/scroll';
 
 // 4. Layout
 @use 'layout/container';
@@ -17,5 +16,6 @@
 @use 'layout/hero';
 @use 'layout/workflow';
 @use 'layout/features';
+@use 'layout/how';
 @use 'layout/footer';
 @use 'layout/mobile-menu'; 
