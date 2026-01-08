@@ -1,0 +1,21 @@
+// 1. Инструменты (Abstracts)
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. База (Base)
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/base';
+
+// 3. Компоненты (Components)
+@import 'components/button';
+@import 'components/title';
+
+// 4. Каркас (Layout)
+@import 'layout/container';
+@import 'layout/header';
+@import 'layout/section';
+
+// 5. Страницы (Pages)
+@import 'pages/home';
