@@ -1,2 +1,77 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  @include fluid-prop("padding-top", 24px, 48px);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: none; // Скрыто на мобилках
+
+    @include mq(1200px) {
+      display: block;
+    }
+  }
+
+  &__login {
+    display: none; // Скрываем на мобилке, чтобы не теснить логотип
+
+    @include mq(1200px) {
+      display: inline-flex;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+
+    &:hover, &--active {
+      color: #e6ff55;
+    }
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 18px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #e6ff55;
+  }
+
+  @include mq(1200px) {
+    display: none;
+  }
+}

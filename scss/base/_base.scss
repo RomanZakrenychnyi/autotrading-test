@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as *;
+
+body {
+  font-family: $font-main;
+  font-weight: 400; // По умолчанию regular
+  -webkit-font-smoothing: antialiased; // Сглаживание для Mac
+}
+
+h1, h2, h3, h4, .font-accent {
+  font-family: $font-accent;
+}
