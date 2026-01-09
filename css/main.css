@@ -634,7 +634,7 @@ section {
   display: flex;
   align-items: center;
   background-color: #0C0B0E;
-  background-image: url("../../img/bg-img.webp");
+  background-image: url("../img/bg-img.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px 330px;
@@ -1207,7 +1207,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../../img/star.webp");
+  background-image: url("../img/star.webp");
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
