@@ -13,7 +13,7 @@
   }
 }
 
-@mixin btn($bg-color: $text-accent, $color: $text-black, $radius: 50px) {
+@mixin btn($bg-color: $text-accent, $color: $text-black, $radius: 30px) {
   display: inline-flex;
   align-items: center;
   justify-content: center;

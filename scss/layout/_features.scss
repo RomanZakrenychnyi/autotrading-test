@@ -19,7 +19,6 @@
   &__container {
     max-width: 1600px;
     display: grid;
-    // Меняем 1fr 1fr на пропорцию, где левая часть может быть больше
     grid-template-columns: var(--char-width) 1fr;
     align-items: center;
     gap: 40px;
@@ -52,7 +51,7 @@
     img {
       position: relative;
       display: block;
-      @include fluid-prop('width', 300px, 914px); // Задай нужный диапазон ширины
+      @include fluid-prop('width', 300px, 914px); 
       height: auto;
       z-index: 100;
 
