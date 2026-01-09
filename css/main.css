@@ -1322,6 +1322,126 @@ section {
   width: 100%;
 }
 
+.shinobi {
+  padding-block: 80px;
+  background-color: #0c0b0e;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+.shinobi__header {
+  margin-bottom: 50px;
+}
+.shinobi__pre-title {
+  font-size: clamp(18px, 18px + (var(--content-vw, 100vw) - 420px) * 0.0066666667, 28px);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.shinobi__accent-title {
+  font-size: clamp(18px, 18px + (var(--content-vw, 100vw) - 420px) * 0.0066666667, 28px);
+  color: #d4ff3d;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.shinobi__logo-text {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(60px, 60px + (var(--content-vw, 100vw) - 420px) * 0.04, 120px);
+  line-height: 1;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+.shinobi__descr {
+  font-size: clamp(14px, 14px + (var(--content-vw, 100vw) - 420px) * 0.0026666667, 18px);
+  max-width: 750px;
+  margin: 0 auto;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+.shinobi__descr span {
+  display: inline;
+}
+@media screen and (max-width: 768px) {
+  .shinobi__descr span {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}
+.shinobi__badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 255, 61, 0.5);
+  background: rgba(212, 255, 61, 0.05);
+  color: #d4ff3d;
+  font-style: italic;
+  font-size: 0.9em;
+}
+.shinobi__visual {
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.shinobi__visual::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(250px, 250px + (var(--content-vw, 100vw) - 420px) * 0.0666666667, 350px);
+  height: clamp(250px, 250px + (var(--content-vw, 100vw) - 420px) * 0.0666666667, 350px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  clip-path: inset(0 0 50% 0);
+}
+.shinobi__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(180px, 180px + (var(--content-vw, 100vw) - 420px) * 0.04, 240px);
+  height: clamp(180px, 180px + (var(--content-vw, 100vw) - 420px) * 0.04, 240px);
+  border: 2px solid #d4ff3d;
+  border-radius: 50%;
+  background-color: #0c0b0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.shinobi__circle-content p {
+  font-style: italic;
+  font-size: clamp(14px, 14px + (var(--content-vw, 100vw) - 420px) * 0.0013333333, 16px);
+}
+.shinobi__circle-content strong {
+  display: block;
+  font-size: clamp(22px, 22px + (var(--content-vw, 100vw) - 420px) * 0.0053333333, 30px);
+  font-weight: 800;
+  margin-top: 5px;
+}
+.shinobi__profit {
+  font-size: clamp(15px, 15px + (var(--content-vw, 100vw) - 420px) * 0.002, 18px);
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.btn-reg {
+  display: inline-block;
+  background-color: #d4ff3d;
+  color: #000;
+  padding: 18px 50px;
+  border-radius: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: clamp(18px, 18px + (var(--content-vw, 100vw) - 420px) * 0.0013333333, 20px);
+}
+@media screen and (max-width: 768px) {
+  .btn-reg {
+    width: 100%;
+  }
+}
+
 .backtests {
   position: relative;
   background-color: #0C0B0E;
