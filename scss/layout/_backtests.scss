@@ -1,0 +1,73 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.backtests {
+  position: relative;
+  background-color: $bg-main;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  &__title {
+    text-align: center;
+    font-family: $font-accent;
+    @include fluid-prop('font-size', 30px, 75px);
+    font-weight: 700;
+    @include fluid-prop('margin-bottom', 64px, 102px);
+    text-transform: uppercase;
+    color: $text-main;
+  }
+
+  &__display {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-shrink: 0;
+
+    @include mq(1200px) {
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    &--side {
+      @include fluid-prop('width', 269px, 694px);
+      @include fluid-prop('height', 141px, 363px);
+    }
+
+    &--main {
+      @include fluid-prop('width', 327px, 841px);
+      @include fluid-prop('height', 171px, 443px);
+    }
+  }
+
+  &__scroll-icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    img {
+      width: 30px;
+    }
+  }
+}
