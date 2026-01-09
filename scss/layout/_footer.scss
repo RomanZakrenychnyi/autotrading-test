@@ -39,6 +39,7 @@
 
   &__main {
     @include fluid-prop('margin-top', 21px, 43px);
+    margin-inline: auto;
     display: grid;
     grid-template-columns: 1.5fr repeat(4, 1fr);
     gap: 30px;
