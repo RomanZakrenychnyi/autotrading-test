@@ -1,0 +1,85 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.stream {
+  position: relative;
+  background-color: #0c0b0e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 60px;
+  overflow: hidden;
+
+  &__container {
+    width: 100%;
+  }
+
+  &__header {
+    margin: 0 auto;
+    @include fluid-prop('margin-bottom', 38px, 80px);
+    max-width: 1160px;
+    text-align: left;
+
+    @include mq(1200px) {
+      padding-inline: 20px;
+    }
+  }
+
+  &__title {
+    font-family: $font-accent;
+    @include fluid-prop('font-size', 30px, 75px);
+    font-weight: 700;
+    @include fluid-prop('margin-bottom', 5px, 23px);
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__subtitle {
+    @include fluid-prop('font-size', 13px, 26px);
+    font-weight: 500;
+    color: #fff;
+  }
+
+  &__video-container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+
+    @include mq(1200px) {
+      max-width: 100%;
+    }
+  }
+
+  &__video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 491px;
+    @include fluid-prop('height', 227px, 491px, 420px, 1200px);
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background: $bg-main;
+    overflow: hidden;
+
+    @include mq(1200px) {
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+    }
+  }
+
+  &__player {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__circle {
+    @include fluid-prop('width', 52px, 100px);
+    @include fluid-prop('height', 52px, 100px);
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
