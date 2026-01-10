@@ -12,7 +12,7 @@
   overflow: hidden;
 
   &__header {
-    @include fluid-prop('margin-bottom', 30px, 35px);
+    @include fluid-prop('margin-bottom', 30px, 30px);
   }
 
   &__title {
@@ -28,6 +28,7 @@
     color: $text-black-third;
     padding-inline: 10px;
     display: inline-block;
+    line-height: 1.1;
   }
 
   &__subtitle {
@@ -36,7 +37,7 @@
     margin-inline: auto;
     padding-left: 160px;
     box-sizing: content-box;
-    @include fluid-prop('margin-top', 8px, 25px);
+    @include fluid-prop('margin-top', 8px, 20px);
     @include fluid-prop('font-size', 13px, 26px);
   }
 
@@ -46,25 +47,39 @@
 
   &__card {
     position: relative;
-    max-width: 540px;
-    margin: 0 auto 50px;
-    padding: 2px; // Для градиентной рамки
-    background: linear-gradient(180deg, rgba(212, 255, 61, 0.5) 0%, rgba(212, 255, 61, 0) 100%);
-    border-radius: 24px;
+    max-width: 600px;
+    margin: 0 auto 35px;
+    padding: 1px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #ebfc56 100%);
 
     &-content {
       background: #111013;
-      border-radius: 22px;
-      padding: 40px 30px;
+      border-radius: 25px;
+      padding-block: 22px;
+      padding-inline: 16px;
       height: 100%;
+      background-color: #0c0b0e;
+    }
+
+    &-content--bg {
+      padding-inline: 20px;
+      padding-block: 20px;
+      border-radius: 20px;
+      height: 100%;
+      background-image: url('../../img/bg-pricing.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom;
     }
   }
 
   &__card-title {
-    @include fluid-prop('font-size', 24px, 32px);
-    color: #d4ff3d;
+    @include fluid-prop('font-size', 22px, 45px);
+    color: $text-accent-secondary;
     font-weight: 700;
     margin-bottom: 30px;
+    text-align: center;
   }
 
   &__list {
@@ -76,33 +91,33 @@
     position: relative;
     padding-left: 25px;
     margin-bottom: 15px;
-    @include fluid-prop('font-size', 14px, 16px);
-    line-height: 1.4;
+    @include fluid-prop('font-size', 11px, 20px);
 
     &::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 6px;
+      top: 50%;
+      transform: translateY(-50%);
       width: 8px;
       height: 8px;
-      background-color: #d4ff3d;
+      background-color: $text-accent-secondary;
       border-radius: 50%;
     }
   }
 
   &__promo {
-    background: rgba(255, 255, 255, 0.05);
-    border-block: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, $bg-text 0%, $bg-text 100%);
     padding-block: 15px;
-    margin-inline: -30px;
-    margin-bottom: 30px;
+    margin-inline: -20px;
+    margin-bottom: 10px;
 
     p {
-      color: #d4ff3d;
-      font-weight: 700;
+      color: $text-accent-secondary;
+      font-weight: 600;
       font-style: italic;
-      @include fluid-prop('font-size', 16px, 18px);
+      @include fluid-prop('font-size', 14px, 25px);
+      text-align: center;
     }
   }
 
@@ -111,21 +126,31 @@
   }
 
   &__old-price {
-    @include fluid-prop('font-size', 20px, 24px);
+    @include fluid-prop('font-size', 18px, 35px);
+    font-weight: 600;
     text-decoration: line-through;
-    opacity: 0.4;
-    margin-bottom: 5px;
+    opacity: 0.45;
   }
 
   &__current-price {
-    @include fluid-prop('font-size', 36px, 48px);
-    font-weight: 800;
+    @include fluid-prop('font-size', 23px, 45px);
+    font-weight: 600;
     margin-bottom: 10px;
   }
 
   &__note {
-    font-size: 14px;
+    @include fluid-prop('font-size', 11px, 20px);
+    color: #bababa;
     font-style: italic;
-    opacity: 0.6;
   }
+
+  &__actions {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+.btn-reg {
+  @include btn;
+  text-align: center;
 }
