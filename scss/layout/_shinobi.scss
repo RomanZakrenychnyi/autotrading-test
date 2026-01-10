@@ -2,63 +2,103 @@
 @use '../abstracts/mixins' as *;
 
 .shinobi {
-  padding-block: 80px;
-  background-color: #0c0b0e;
-  color: #fff;
-  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $bg-main;
   overflow: hidden;
+  text-align: center;
 
   &__header {
-    margin-bottom: 50px;
+    margin: 0 auto;
+    @include fluid-prop('margin-bottom', 20px, 50px);
+    @include fluid-prop('max-width', 320px, 1160px);
   }
 
   &__pre-title {
-    @include fluid-prop('font-size', 18px, 28px);
+    @include fluid-prop('font-size', 19px, 50px);
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
+    text-align: left;
+
+    @include mq(1200px) {
+      margin-bottom: 8px;
+      text-align: right;
+    }
   }
 
   &__accent-title {
-    @include fluid-prop('font-size', 18px, 28px);
+    @include fluid-prop('font-size', 19px, 50px);
+    font-weight: 500;
     color: #d4ff3d;
     font-style: italic;
+    text-align: right;
     text-transform: uppercase;
-    margin-bottom: 20px;
+
+    @include mq(1200px) {
+      margin-bottom: 17px;
+    }
   }
 
   &__logo-text {
     font-family: $font-accent;
-    @include fluid-prop('font-size', 60px, 120px);
+    @include fluid-prop('font-size', 35px, 140px);
     line-height: 1;
-    margin-bottom: 30px;
+    text-align: right;
+    @include fluid-prop('margin-bottom', 20px, 55px);
     letter-spacing: 2px;
   }
 
   &__descr {
-    @include fluid-prop('font-size', 14px, 18px);
-    max-width: 750px;
-    margin: 0 auto;
-    opacity: 0.8;
-    line-height: 1.6;
+    @include fluid-prop('font-size', 13px, 26px);
+    line-height: 1.4;
+    text-align: left;
+  }
 
-    span {
-      display: inline;
+  &__badge--start {
+    color: $text-muted;
+    font-style: italic;
+  }
 
-      @include mq(768px) {
-        display: inline-block;
-        margin-top: 10px;
-      }
+  &__badge--end {
+    padding: 4px 16px;
+    color: $text-accent-secondary;
+    @include fluid-prop('font-size', 13px, 25px);
+    font-style: italic;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgb(27, 27, 27) 0%, rgba(27, 27, 27, 0) 100%);
+    box-shadow: 0 4px 15px 0 black;
+
+    @include mq(1200px) {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 6px 18px;
     }
   }
 
-  &__badge {
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(212, 255, 61, 0.5);
-    background: rgba(212, 255, 61, 0.05);
-    color: #d4ff3d;
-    font-style: italic;
-    font-size: 0.9em;
+  &__bg-container {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 49%;
+    background-image: url(../img/shinobi-bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    z-index: 1;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__container--second {
+    position: absolute;
+    top: -130px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   &__visual {
@@ -66,7 +106,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 
     &::before {
       content: '';
@@ -74,11 +114,20 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      @include fluid-prop('width', 250px, 350px);
-      @include fluid-prop('height', 250px, 350px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      @include fluid-prop('width', 250px, 430px);
+      @include fluid-prop('height', 250px, 430px);
+      padding: 1px;
+      background: linear-gradient(90deg, rgba(235, 252, 86, 0) 0%, rgba(235, 252, 86, 1) 50%, rgba(235, 252, 86, 0) 100%);
       border-radius: 50%;
-      clip-path: inset(0 0 50% 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      clip-path: inset(50% 0 0 0);
+
+      @include mq(1200px) {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+      }
     }
   }
 
@@ -87,9 +136,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    @include fluid-prop('width', 180px, 240px);
-    @include fluid-prop('height', 180px, 240px);
-    border: 2px solid #d4ff3d;
+    @include fluid-prop('width', 150px, 300px);
+    @include fluid-prop('height', 150px, 300px);
+    border: 2px solid $text-main;
     border-radius: 50%;
     background-color: #0c0b0e;
     display: flex;
@@ -97,38 +146,54 @@
     justify-content: center;
     z-index: 2;
 
+    @include mq(1200px) {
+      border-color: $text-accent-secondary;
+    }
+
     &-content {
       p {
+        color: $text-muted;
         font-style: italic;
-        @include fluid-prop('font-size', 14px, 16px);
+        @include fluid-prop('font-size', 13px, 26px);
       }
       strong {
         display: block;
-        @include fluid-prop('font-size', 22px, 30px);
-        font-weight: 800;
-        margin-top: 5px;
+        @include fluid-prop('font-size', 16px, 35px);
+        font-weight: 700;
       }
     }
   }
 
   &__profit {
-    @include fluid-prop('font-size', 15px, 18px);
-    margin-bottom: 30px;
-    opacity: 0.9;
+    @include fluid-prop('margin-bottom', 32px, 35px);
+    @include fluid-prop('font-size', 12px, 26px);
+    font-weight: 500;
+  }
+
+  &__profit--percent {
+    @include fluid-prop('font-size', 12px, 30px);
+    font-weight: 700;
+  }
+
+  &__bg-text {
+    position: absolute;
+    bottom: -21px;
+    left: 0;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(38px, 38px + (var(--content-vw, 100vw) - 420px) * 0.0413333333, 100px);
+    font-weight: 500;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(136, 136, 136, 0.52);
+    white-space: nowrap;
+    z-index: 1;
+
+    @include mq(1200px) {
+      display: none;
+    }
   }
 }
 
 .btn-reg {
-  display: inline-block;
-  background-color: #d4ff3d;
-  color: #000;
-  padding: 18px 50px;
-  border-radius: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  @include fluid-prop('font-size', 18px, 20px);
-
-  @include mq(768px) {
-    width: 100%;
-  }
+  @include btn;
 }
