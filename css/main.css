@@ -1351,6 +1351,11 @@ section {
   overflow: hidden;
   text-align: center;
 }
+@media screen and (max-width: 1200px) {
+  .shinobi {
+    min-height: auto;
+  }
+}
 .shinobi__header {
   margin: 0 auto;
   margin-bottom: clamp(20px, 20px + (var(--content-vw, 100vw) - 420px) * 0.02, 50px);
@@ -1424,9 +1429,24 @@ section {
   background-position: bottom;
   z-index: 1;
 }
+@media screen and (max-width: 1200px) {
+  .shinobi__bg-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    inset: unset;
+    padding-top: 80px;
+    background-position: 0 70px;
+  }
+}
 .shinobi__container {
   position: relative;
   z-index: 2;
+}
+@media screen and (max-width: 1200px) {
+  .shinobi__container {
+    margin-bottom: 70px;
+  }
 }
 .shinobi__container--second {
   position: absolute;
@@ -1434,12 +1454,26 @@ section {
   left: 50%;
   transform: translateX(-50%);
 }
+@media screen and (max-width: 1200px) {
+  .shinobi__container--second {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+}
 .shinobi__visual {
   height: 300px;
   position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: 70px;
+}
+@media screen and (max-width: 1200px) {
+  .shinobi__visual {
+    height: auto;
+    margin-bottom: 150px;
+  }
 }
 .shinobi__visual::before {
   content: "";
@@ -1463,6 +1497,10 @@ section {
 @media screen and (max-width: 1200px) {
   .shinobi__visual::before {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
+    width: clamp(260px, 260px + (var(--content-vw, 100vw) - 420px) * 0.04, 320px);
+    height: clamp(260px, 260px + (var(--content-vw, 100vw) - 420px) * 0.04, 320px);
+    clip-path: inset(50% 0 0 0);
+    opacity: 0.5;
   }
 }
 .shinobi__circle {
@@ -1546,6 +1584,11 @@ section {
 }
 .btn-reg:active {
   transform: translateY(0);
+}
+@media screen and (max-width: 1200px) {
+  .btn-reg {
+    margin-bottom: 40px;
+  }
 }
 
 .backtests {

@@ -11,6 +11,10 @@
   overflow: hidden;
   text-align: center;
 
+  @include mq(1200px) {
+    min-height: auto;
+  }
+
   &__header {
     margin: 0 auto;
     @include fluid-prop('margin-bottom', 20px, 50px);
@@ -87,11 +91,24 @@
     background-size: cover;
     background-position: bottom;
     z-index: 1;
+
+    @include mq(1200px) {
+      position: relative;
+      width: 100%;
+      height: auto;
+      inset: unset;
+      padding-top: 80px;
+      background-position: 0 70px;
+    }
   }
 
   &__container {
     position: relative;
     z-index: 2;
+
+    @include mq(1200px) {
+      margin-bottom: 70px;
+    }
   }
 
   &__container--second {
@@ -99,6 +116,13 @@
     top: -130px;
     left: 50%;
     transform: translateX(-50%);
+
+    @include mq(1200px) {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+    }
   }
 
   &__visual {
@@ -107,6 +131,11 @@
     display: flex;
     justify-content: center;
     margin-bottom: 70px;
+
+    @include mq(1200px) {
+      height: auto;
+      margin-bottom: 150px;
+    }
 
     &::before {
       content: '';
@@ -127,6 +156,10 @@
 
       @include mq(1200px) {
         background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+        @include fluid-prop('width', 260px, 320px);
+        @include fluid-prop('height', 260px, 320px);
+        clip-path: inset(50% 0 0 0);
+        opacity: 0.5;
       }
     }
   }
@@ -196,4 +229,8 @@
 
 .btn-reg {
   @include btn;
+
+  @include mq(1200px) {
+    margin-bottom: 40px;
+  }
 }
