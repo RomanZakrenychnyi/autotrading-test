@@ -1,0 +1,131 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.pricing {
+  position: relative;
+  background-color: #0c0b0e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__header {
+    @include fluid-prop('margin-bottom', 30px, 35px);
+  }
+
+  &__title {
+    font-family: $font-accent;
+    @include fluid-prop('font-size', 30px, 75px);
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__title--accent {
+    background-color: $text-accent;
+    color: $text-black-third;
+    padding-inline: 10px;
+    display: inline-block;
+  }
+
+  &__subtitle {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+    padding-left: 160px;
+    box-sizing: content-box;
+    @include fluid-prop('margin-top', 8px, 25px);
+    @include fluid-prop('font-size', 13px, 26px);
+  }
+
+  &__subtitle--accent {
+    color: $text-muted;
+  }
+
+  &__card {
+    position: relative;
+    max-width: 540px;
+    margin: 0 auto 50px;
+    padding: 2px; // Для градиентной рамки
+    background: linear-gradient(180deg, rgba(212, 255, 61, 0.5) 0%, rgba(212, 255, 61, 0) 100%);
+    border-radius: 24px;
+
+    &-content {
+      background: #111013;
+      border-radius: 22px;
+      padding: 40px 30px;
+      height: 100%;
+    }
+  }
+
+  &__card-title {
+    @include fluid-prop('font-size', 24px, 32px);
+    color: #d4ff3d;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    @include fluid-prop('font-size', 14px, 16px);
+    line-height: 1.4;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      background-color: #d4ff3d;
+      border-radius: 50%;
+    }
+  }
+
+  &__promo {
+    background: rgba(255, 255, 255, 0.05);
+    border-block: 1px solid rgba(255, 255, 255, 0.1);
+    padding-block: 15px;
+    margin-inline: -30px;
+    margin-bottom: 30px;
+
+    p {
+      color: #d4ff3d;
+      font-weight: 700;
+      font-style: italic;
+      @include fluid-prop('font-size', 16px, 18px);
+    }
+  }
+
+  &__price-box {
+    text-align: center;
+  }
+
+  &__old-price {
+    @include fluid-prop('font-size', 20px, 24px);
+    text-decoration: line-through;
+    opacity: 0.4;
+    margin-bottom: 5px;
+  }
+
+  &__current-price {
+    @include fluid-prop('font-size', 36px, 48px);
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  &__note {
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.6;
+  }
+}
