@@ -798,6 +798,7 @@ section {
 @media screen and (max-width: 1200px) {
   .cta {
     height: auto;
+    padding-top: 16px;
   }
 }
 .cta__container {
