@@ -643,8 +643,10 @@ section {
 }
 @media screen and (max-width: 1200px) {
   .how {
+    padding-bottom: 200px;
     height: auto;
     margin-top: 200px;
+    background-position: 0px 255px;
   }
 }
 .how__container {
@@ -798,7 +800,6 @@ section {
 @media screen and (max-width: 1200px) {
   .cta {
     height: auto;
-    padding-top: 16px;
   }
 }
 .cta__container {

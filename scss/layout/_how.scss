@@ -14,8 +14,10 @@
   overflow: hidden;
 
   @include mq(1200px) {
+    padding-bottom: 200px;
     height: auto;
     margin-top: 200px;
+    background-position: 0px 255px;
   }
 
   &__container {
