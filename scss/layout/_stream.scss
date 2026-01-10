@@ -11,6 +11,12 @@
   padding-block: 60px;
   overflow: hidden;
 
+  @include mq (1200px) {
+    min-height: auto;
+    padding-block: 0px;
+    margin-top: 90px;
+  }
+
   &__container {
     width: 100%;
   }

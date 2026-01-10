@@ -11,6 +11,11 @@
   justify-content: center;
   overflow: hidden;
 
+  @include mq(1200px) {
+    min-height: auto;
+    margin-top: 150px;
+  }
+
   &__header {
     @include fluid-prop('margin-bottom', 30px, 30px);
   }
@@ -33,9 +38,9 @@
 
   &__subtitle {
     width: 100%;
-    max-width: 720px;
+    @include fluid-prop('max-width', 300px, 720px);
     margin-inline: auto;
-    padding-left: 160px;
+    @include fluid-prop('padding-left', 40px, 160px);
     box-sizing: content-box;
     @include fluid-prop('margin-top', 8px, 20px);
     @include fluid-prop('font-size', 13px, 26px);
@@ -71,6 +76,12 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: bottom;
+
+      @include mq(1200px) {
+        border-radius: 0px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
     }
   }
 

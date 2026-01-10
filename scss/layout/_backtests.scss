@@ -11,6 +11,11 @@
   justify-content: center;
   overflow: hidden;
 
+  @include mq (1200px) {
+    min-height: auto;
+    margin-top: 45px;
+  }
+
   &__title {
     text-align: center;
     font-family: $font-accent;

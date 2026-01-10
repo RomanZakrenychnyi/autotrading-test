@@ -10,6 +10,11 @@
   justify-content: center;
   flex-direction: column;
 
+  @include mq(1200px){
+    padding-top: 120px;
+    height: auto;
+  }
+
   &__header {
     text-align: left;
     @include fluid-prop('margin-bottom', 29px, 41px);

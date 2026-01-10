@@ -10,6 +10,10 @@
   padding-block: 100px;
   overflow: hidden;
 
+  @include mq(1200px) {
+    min-height: auto;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;

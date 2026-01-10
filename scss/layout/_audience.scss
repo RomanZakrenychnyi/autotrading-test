@@ -9,6 +9,11 @@
   align-items: center;
   overflow: hidden;
 
+  @include mq(1200px){
+    min-height: auto;
+    margin-top: 28px;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
