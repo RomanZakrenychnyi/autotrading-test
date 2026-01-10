@@ -28,7 +28,7 @@ section {
 
   @include mq(1200px) {
     height: auto;
-    min-height: 100vh;
+    min-height: auto;
     scroll-snap-align: none;
   }
 }

@@ -121,7 +121,7 @@ section {
 @media screen and (max-width: 1200px) {
   section {
     height: auto;
-    min-height: 100vh;
+    min-height: auto;
     scroll-snap-align: none;
   }
 }
@@ -268,7 +268,6 @@ section {
   .hero {
     min-height: auto;
     height: auto;
-    padding-bottom: 40px;
   }
 }
 .hero .header {
@@ -370,7 +369,7 @@ section {
 @media screen and (max-width: 1200px) {
   .workflow {
     height: auto;
-    padding-block: 60px;
+    margin-top: 105px;
   }
 }
 .workflow__container {
@@ -423,6 +422,7 @@ section {
 }
 @media screen and (max-width: 1200px) {
   .workflow__grid {
+    margin-bottom: 0;
     flex-direction: column;
     align-items: center;
     gap: 50px;
@@ -503,7 +503,7 @@ section {
 @media screen and (max-width: 1200px) {
   .features {
     height: auto;
-    padding-block: 60px;
+    margin-top: 80px;
   }
 }
 .features__container {
@@ -644,7 +644,7 @@ section {
 @media screen and (max-width: 1200px) {
   .how {
     height: auto;
-    padding-block: 80px;
+    margin-top: 200px;
   }
 }
 .how__container {
@@ -798,7 +798,6 @@ section {
 @media screen and (max-width: 1200px) {
   .cta {
     height: auto;
-    padding-block: 100px;
   }
 }
 .cta__container {
